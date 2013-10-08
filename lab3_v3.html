@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type = "text/css" href ="style2.css">
+	<meta charset="utf-8">
+	<title>Hendelser med jQuery</title>
+	<script src="js/jquery-1.8.1.js"></script>
+	<!-- Setter inn jcanvas biblioteket som bygger på jQuery -->
+	<script src="js/jcanvas.min.js"></script>
+	
+	<!-- Husk å legge til CSS filen din her" -->
+	
+    <script>
+	$(function() {
+		// DEFINERER VARIABLEN CANVAS MED REFERANSE TIL OBJEKT (I DOM) MED ID MY_CANVAS
+		var canvas = $('#my_canvas');
+
+		// BEREGNER (X,Y) POSISJON TIL CANVAS DOM-ELEMENT PÅ SIDEN
+		var canvasPosition = {
+			x: canvas.offset().left,
+			y: canvas.offset().top
+		};
+		
+		// HER "FANGES" CLICK HENDELSE OPP MED JQUERY METODEN
+		// E REFERERER TIL HENDELSE (EVENT) SOM DA GIR MULIGHET TIL Å KALLE TILGJENGELIGE METODER
+		canvas.on('click', function(e) {
+
+		// SETTER INN DENNE METODE FOR Å UNNGÅ STANDARDRESPONS PÅ STANDARDHENDELSER TIL MUS
+			//E.PREVENTDEFAULT();
+		
+		// BRUKER PAGEX OG PAGEY FOR Å FÅ POSISJONEN TIL MUS I FORHOLD TIL HELE SIDEN (IKKE MY_CANVAS)
+			var mouse = {
+				x: e.pageX - canvasPosition.x,
+				y: e.pageY - canvasPosition.y
+			}
+		
+		/*
+		   NÅ HAR DU LOKALE KOORDINATER MOUSE.X OG MOUSE.Y
+		   SOM ER BEREGNET I FORHOLD TIL DET LOKALE 
+		   KOORDINATSYSTEMET I MY_CANVAS 
+		   MED (0,0) I DEN ØVERSTE VENSTRE HJØRNE
+		*/
+			// SKRIV KOORDINATENE UT TIL CONSOLE BASERT PÅ LAB3_V2
+			// KOPIER FRA LAB2_V2
+			
+			console.log(mouse.x +"," + mouse.y);			//Her er funksjonen som logger (skriver ut) x og y aksen når du trykker i Canvas
+				$("#x").html(mouse.x);
+				$("#y").html(mouse.y);
+			
+			// HER BARE KOPIERES LIGNENDE LØSNING FRA LAB3_V2
+			// FOR Å SKRIVE UT TIL <SPAN> ELEMENTNODEN
+			
+			
+			// DETTE ER KODE FOR DELOPPGAVE 2
+			// HER ER TO METODER KALT OPP ETTER HVERANDRE OG BEGGE TILHØRER OBJEKTET CANVAS
+			
+			canvas.clearCanvas({
+				x: 0, y: 0,
+				width: canvas.width,
+				height: canvas.height
+			})
+			.drawText({
+				fillStyle: "#000",
+				strokeStyle: "#000",
+				strokeWidth: 1,
+				x: mouse.x,
+				y: mouse.y,			// Her er koordinatene til hvor du klikker inni Canvas
+				font: "12pt Verdana, sans-serif",
+				text: mouse.x + "," + mouse.y			// Her sier du hva som skal skrives ut (x og y = hvor du trykker)
+				
+				
+				// HER BESVARES DELOPPGAVE 2 (SE LENKEN TIL JCANVAS DOKUMENTASJON I OPPGAVETEKSTEN)
+				
+				
+				
+			});
+			
+			return false;
+		});
+	}); 
+	</script>
+</head>
+<body>
+	<p>Testside for å "fange" hendelser fra mus.</p>
+	<p>
+		<ul>
+			<li>[1]Beregne (x,y) posisjon til Canvas DOM element på siden</li> 
+			<li>[2]Finne den globale posisjonen til mus-kursøren i forhold til hele dokumentet</li> 
+			<li>[3]For å lokalisere koordinatsenteret (0,0) til Canvas elementet i det øverste venstre hjørnet, og transformere globale koordinater til lokale koordinater, ta differansen mellom den globale museposisjonen beregnet i [2] og Canvas posisjonen fra [1] </li>
+		</ul>
+	</p>
+	<canvas id="my_canvas" width="200" height="200"></canvas>
+	<!-- Oppgaveløsning skal implementeres her -->
+		
+		<p>Avstanden til venstre kant er <span id="x"></span> </p>			<!--Her blir informasjonen lagt ut med hjelp av en id tag (span) som finner X funksjonen -->
+		<p>Avstanden til øvre kant er <span id="y"></span> </p>				<!--Her blir informasjonen lagt ut med hjelp av en id tag (span) som finner Y funksjonen -->
+	
+	
+</body>
+</html>
