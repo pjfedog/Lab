@@ -4,6 +4,12 @@ FRA NÅ AV SÅ LEGGER JEG ALLE MINE LAB-INNLEVERINGER I "Lab" REPOSITORYET. BEKL
 
 ===
 
+Lab 2
+
+Har nå lagt til kontrollspørsmål i en .txt fil. Oppgave 2 funker.
+
+===
+
 Lab 3
 
 I HMTL-dokumentene så er mine kommentarer i koden skrevet i små bokstaver,
