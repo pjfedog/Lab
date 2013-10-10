@@ -13,10 +13,10 @@
 
 <body>
 <form action="">
-<select name="Programmeringsspråk" id="proglangs" onChange="printToOutputBox (this)">
+<select name="Programmeringsspråk" id="proglangs" onChange="printToOutputBox (this)"> <!-- Her sier du at Programeringspråket du velger skal komme ut i en outputbox -->
 
-<option value="ActionScript"selected>ActionScript</option>
-<option value="AppleScript">AppleScript</option>
+<option value="ActionScript"selected>ActionScript</option> <!-- Her ligger verdien ActionScript som default valg -->
+<option value="AppleScript">AppleScript</option>			<!-- Her ligger verdiene du kan velge i dropdown meny -->	
 <option value="Asp">Asp</option>
 <option value="BASIC">BASIC</option>
 <option value="C++">C++</option>
@@ -45,11 +45,11 @@
 <script src="proglangs.js"></script>
 
 
-<ul class="navbar">
-  <li><a href="index.html">Hjem</a>
-  <li><a href="musings.html">Alfabetisk</a>
-  <li><a href="town.html">Kronologisk</a>
-  <li><a href="links.html">Hierakisk</a>
+<ul class="navbar">			<!-- Her har du koden til menyen -->
+  <li><a href="lab2_v2.html">Hjem</a>
+  <li><a href="musings.html"onclick="alert('Siden er under konstruksjon')">Alfabetisk</a> <!-- Her har du en JS-funksjon som sier at du skal få en Pop up når du trykker på fanene -->
+  <li><a href="town.html"onclick="alert('Siden er under konstruksjon')">Kronologisk</a>
+  <li><a href="links.html"onclick="alert('Siden er under konstruksjon')">Hierakisk</a>
 </ul>
 
 
