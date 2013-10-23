@@ -19,3 +19,10 @@ Kontrollspørsmål ligger filen lab3_Kontrollspørsmål.txt
 
 CSS koden ligger i henholdsvis "style.css" for Oppgave 0 
 og i "style2.css" for oppgave 1 og 2.
+
+
+---
+
+Lab 4
+
+Ferdig + OK. Inkluderer et JS-bibliotek(mappe) med navn "lab4_js"
